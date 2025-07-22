@@ -16,110 +16,82 @@
       overflow-x: hidden;
     }
 
-    .container {
-      padding: 20px;
-      position: relative;
-    }
-
     .fps {
       position: absolute;
       top: 10px;
       left: 10px;
-      font-size: 16px;
+      font-size: 14px;
       color: #0ff;
-      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+      text-shadow: 0 0 5px #0ff;
       background: rgba(0, 0, 0, 0.5);
-      padding: 5px 10px;
+      padding: 4px 10px;
       border-radius: 8px;
       z-index: 10;
-    }
-
-    .title-left {
-      position: absolute;
-      top: 50px;
-      left: 10px;
-      font-size: 22px;
-      color: #0ff;
-      text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
-      animation: fadeSlide 3s ease-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeSlide {
-      from {
-        transform: translateY(30px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
     }
 
     .logo-right {
       position: absolute;
       top: 10px;
       right: 10px;
-      width: 160px;
-      height: 160px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      border: 4px solid cyan;
-      box-shadow: 0 0 20px cyan, 0 0 40px #0ff;
+      border: 3px solid cyan;
+      box-shadow: 0 0 10px cyan, 0 0 20px #0ff;
       background: white;
-      animation: shake 4s infinite;
-      z-index: 10;
+      object-fit: cover;
     }
 
-    @keyframes shake {
-      0%, 100% { transform: rotate(0deg); }
-      25% { transform: rotate(1deg); }
-      50% { transform: rotate(-1deg); }
-      75% { transform: rotate(1deg); }
+    h1.title-main {
+      margin-top: 130px;
+      text-align: center;
+      font-size: 28px;
+      color: #0ff;
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+
+    .center-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
     }
 
     .neon-btn {
-      display: inline-block;
       margin: 10px;
       padding: 12px 30px;
       color: #0ff;
       border: 2px solid #0ff;
-      background: rgba(0, 0, 0, 0.3);
-      font-weight: bold;
+      background: rgba(0, 0, 0, 0.4);
       font-size: 16px;
-      text-shadow: 0 0 5px #0ff;
-      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .neon-btn:hover {
-      background-color: rgba(0, 255, 255, 0.1);
-      box-shadow: 0 0 20px #0ff, 0 0 40px #0ff inset;
-    }
-
-    .links {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .links button {
-      display: inline-block;
-      margin: 8px;
-      padding: 12px 25px;
-      color: #0ff;
-      background: transparent;
-      border: 2px solid #0ff;
-      border-radius: 8px;
-      text-shadow: 0 0 5px #0ff;
-      box-shadow: 0 0 10px #0ff;
-      font-size: 14px;
       font-weight: bold;
+      text-shadow: 0 0 5px #0ff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #0ff inset;
       cursor: pointer;
     }
 
-    .links button:hover {
+    .neon-btn:hover {
       background: rgba(0, 255, 255, 0.1);
       box-shadow: 0 0 20px #0ff;
+    }
+
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 30px;
+      font-size: 16px;
+      font-weight: bold;
+      color: cyan;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid cyan;
+      border-radius: 12px;
+      cursor: pointer;
+      text-shadow: 0 0 10px cyan;
+      box-shadow: 0 0 20px #0ff;
+      z-index: 10000;
     }
 
     .dot {
@@ -137,86 +109,36 @@
     }
 
     @keyframes fall-dot {
-      from {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      to {
-        transform: translateY(100vh);
-        opacity: 0;
-      }
-    }
-
-    .music-btn {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      padding: 15px 30px;
-      font-size: 16px;
-      font-weight: bold;
-      color: cyan;
-      background: rgba(0, 0, 0, 0.5);
-      border: 2px solid cyan;
-      border-radius: 12px;
-      cursor: pointer;
-      text-shadow: 0 0 10px cyan;
-      box-shadow: 0 0 20px #0ff;
-      z-index: 10000;
-    }
-
-    .music-btn:hover {
-      background: rgba(0, 255, 255, 0.1);
-      box-shadow: 0 0 30px #0ff;
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(100vh); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="fps">FPS: 99.9</div>
-    <h1 class="title-left">VUONG TRUM MAI DAM</h1>
+  <div class="fps">FPS: 99.9</div>
+  <img src="https://cdn.discordapp.com/attachments/1266182121047986342/1397051452354199603/IMG_1749973203749_1749973241894.jpg" class="logo-right" />
 
-    <img src="https://cdn.discordapp.com/attachments/1266182121047986342/1397051452354199603/IMG_1749973203749_1749973241894.jpg" alt="Logo" class="logo-right" />
+  <h1 class="title-main">VƯƠNG TRÙM MẠI DÂM</h1>
 
-    <div class="profile">
-      <button class="neon-btn">Dịch vụ</button>
-      <button class="neon-btn">CHAT SEX - CALL DAM</button>
-
-      <div class="links">
-        <button onclick="window.open('https://www.facebook.com/nguyen.hung.vuong.759003', '_blank')">FACEBOOK</button>
-        <button onclick="window.open('https://zalo.me/081603870', '_blank')">ZALO</button>
-        <button onclick="window.open('https://www.tiktok.com/@metagaya1?_t=ZS-8yEEZqJyhur&_r=1', '_blank')">TIKTOK</button>
-      </div>
-    </div>
+  <div class="center-buttons">
+    <button class="neon-btn">Dịch vụ</button>
+    <button class="neon-btn">CHAT SEX - CALL DÂM</button>
+    <button class="neon-btn" onclick="window.open('https://www.facebook.com/nguyen.hung.vuong.759003', '_blank')">FACEBOOK</button>
+    <button class="neon-btn" onclick="window.open('https://zalo.me/081603870', '_blank')">ZALO</button>
+    <button class="neon-btn" onclick="window.open('https://www.tiktok.com/@metagaya1?_t=ZS-8yEEZqJyhur&_r=1', '_blank')">TIKTOK</button>
   </div>
 
   <button class="music-btn" onclick="toggleMusic()">Phát nhạc</button>
 
   <audio id="bg-music" loop preload="auto">
     <source src="https://media.vocaroo.com/mp3/16cxaqpVQIn3" type="audio/mp3">
-    Trình duyệt của bạn không hỗ trợ phát nhạc.
+    Trình duyệt không hỗ trợ âm thanh.
   </audio>
 
   <script>
-    function createDot() {
-      const dot = document.createElement("div");
-      dot.classList.add("dot");
-
-      dot.style.left = Math.random() * window.innerWidth + "px";
-      dot.style.animationDuration = (Math.random() * 3 + 2) + "s";
-      dot.style.width = dot.style.height = (Math.random() * 6 + 4) + "px";
-      dot.style.opacity = Math.random();
-
-      document.body.appendChild(dot);
-      setTimeout(() => dot.remove(), 5000);
-    }
-
-    setInterval(createDot, 150);
-
-    const music = document.getElementById("bg-music");
-    const button = document.querySelector(".music-btn");
-
     function toggleMusic() {
+      const music = document.getElementById("bg-music");
+      const button = document.querySelector(".music-btn");
       if (music.paused) {
         music.play();
         button.textContent = "Tạm dừng nhạc";
@@ -227,17 +149,24 @@
     }
 
     document.body.addEventListener('click', function autoPlayOnce() {
+      const music = document.getElementById("bg-music");
       music.play();
-      button.textContent = "Tạm dừng nhạc";
+      document.querySelector(".music-btn").textContent = "Tạm dừng nhạc";
       document.body.removeEventListener('click', autoPlayOnce);
     });
 
-    const fpsElement = document.querySelector(".fps");
-    function updateFPS() {
-      const fps = (Math.random() * (144.9 - 59.8) + 59.8).toFixed(1);
-      fpsElement.textContent = `FPS: ${fps}`;
+    function createDot() {
+      const dot = document.createElement("div");
+      dot.classList.add("dot");
+      dot.style.left = Math.random() * window.innerWidth + "px";
+      dot.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      dot.style.width = dot.style.height = (Math.random() * 6 + 4) + "px";
+      dot.style.opacity = Math.random();
+      document.body.appendChild(dot);
+      setTimeout(() => dot.remove(), 5000);
     }
-    setInterval(updateFPS, 300);
+
+    setInterval(createDot, 150);
   </script>
 </body>
 </html>
